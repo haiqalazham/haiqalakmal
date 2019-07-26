@@ -6,19 +6,33 @@ import Layout from '../components/layout';
 
 const IndexPage = (props) => (
   <Layout>
-    <Img fixed={props.data.imageOne.childImageSharp.fixed} />
-    <Img fixed={props.data.imageTwo.childImageSharp.fixed} />
-    <Img fixed={props.data.imageThree.childImageSharp.fixed} />
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+	      <div style={{ width: '100%' }}>
+		      <a href='#'>
+			      <Img fluid={props.data.imageOne.childImageSharp.fluid} />
+		      </a>
+	      </div>
+	      <div style={{ width: '100%' }}>
+		      <a href='#'>
+			      <Img fluid={prop.data.imageTwo.childImageSharp.fluid} />
+		      </a>
+	      </div>
+	      <div style={{ width: '100%' }}>
+		      <a href='#'>
+			      <Img fluid={props.data.imageThree.childImageSharp.fluid} />
+		      </a>
+	      </div>
+      </div>
   </Layout>
 )
 
 export default IndexPage;
 
-export const fixedImage = graphql`
-fragment fixedImage on File {
+export const fluidImage = graphql`
+fragment fluidImage on File {
   childImageSharp {
-    fixed(width: 800) {
-      ...GatsbyImageSharpFixed
+    fluid(maxWidth: 800) {
+      ...GatsbyImageSharpFluid
     }
   }
 }
@@ -27,13 +41,13 @@ fragment fixedImage on File {
 export const pageQuery = graphql`
   query {
     imageOne: file(relativePath: { eq: "image1.jpg" }) {
-      ...fixedImage
+      ...fluidImage
     }
     imageTwo: file(relativePath: { eq: "image2.jpg" }) {
-      ...fixedImage
+      ...fluidImage
     }
     imageThree: file(relativePath: { eq: "image3.jpg" }) {
-      ...fixedImage
+      ...fluidImage
     }
   }
 `
