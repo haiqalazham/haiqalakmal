@@ -6,23 +6,9 @@ import Layout from '../components/layout';
 
 const IndexPage = (props) => (
   <Layout>
-      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-	      <div style={{ width: '100%' }}>
-		      <a href='#'>
-			      <Img fluid={props.data.imageOne.childImageSharp.fluid} />
-		      </a>
-	      </div>
-	      <div style={{ width: '100%' }}>
-		      <a href='#'>
-			      <Img fluid={prop.data.imageTwo.childImageSharp.fluid} />
-		      </a>
-	      </div>
-	      <div style={{ width: '100%' }}>
-		      <a href='#'>
-			      <Img fluid={props.data.imageThree.childImageSharp.fluid} />
-		      </a>
-	      </div>
-      </div>
+    <Img fluid={props.data.imageOne.childImageSharp.fluid} />
+    <Img fluid={props.data.imageTwo.childImageSharp.fluid} />
+    <Img fluid={props.data.imageThree.childImageSharp.fluid} />
   </Layout>
 )
 
