@@ -29,10 +29,6 @@ module.exports = {
         title: 'About',
         path: '/about',
       },
-      {
-        title: 'Showcase',
-        path: '/showcase',
-      },
     ],
   },
   plugins: [
