@@ -6,19 +6,19 @@ import Layout from '../components/layout';
 
 const IndexPage = (props) => (
   <Layout>
-    <Img fluid={props.data.imageOne.childImageSharp.fluid} />
-    <Img fluid={props.data.imageTwo.childImageSharp.fluid} />
-    <Img fluid={props.data.imageThree.childImageSharp.fluid} />
+    <Img fixed={props.data.imageOne.childImageSharp.fixed} />
+    <Img fixed={props.data.imageTwo.childImageSharp.fixed} />
+    <Img fixed={props.data.imageThree.childImageSharp.fixed} />
   </Layout>
 )
 
 export default IndexPage;
 
-export const fluidImage = graphql`
-fragment fluidImage on File {
+export const fixedImage = graphql`
+fragment fixedImage on File {
   childImageSharp {
-    fluid(maxWidth: 800) {
-      ...GatsbyImageSharpFluid
+    fixed(width: 125, height: 125) {
+      ...GatsbyImageSharpFixed
     }
   }
 }
@@ -27,13 +27,13 @@ fragment fluidImage on File {
 export const pageQuery = graphql`
   query {
     imageOne: file(relativePath: { eq: "image1.jpg" }) {
-      ...fluidImage
+      ...fixedImage
     }
     imageTwo: file(relativePath: { eq: "image2.jpg" }) {
-      ...fluidImage
+      ...fixedImage
     }
     imageThree: file(relativePath: { eq: "image3.jpg" }) {
-      ...fluidImage
+      ...fixedImage
     }
   }
 `
