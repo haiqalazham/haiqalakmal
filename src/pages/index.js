@@ -8,7 +8,7 @@ import Img from "gatsby-image"
 export default ({ data }) => (
   <div>
     <h1>Hello gatsby-image</h1>
-    <Img fluid={data.file.childImageSharp.fluid} />
+    <Img fluid={data.childImageSharp.fluid} />
   </div>
 )
 
