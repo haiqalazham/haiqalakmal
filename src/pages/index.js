@@ -5,11 +5,9 @@ import Img from 'gatsby-image';
 import Layout from '../components/layout';
 
 const IndexPage = (props) => (
-  <Layout>
-    <Img fluid={props.data.imageOne.childImageSharp.fluid} />
-    <Img fluid={props.data.imageTwo.childImageSharp.fluid} />
-    <Img fluid={props.data.imageThree.childImageSharp.fluid} />
-  </Layout>
+  <Img fluid={props.data.imageOne.childImageSharp.fluid} />
+  <Img fluid={props.data.imageTwo.childImageSharp.fluid} />
+  <Img fluid={props.data.imageThree.childImageSharp.fluid} />
 )
 
 export default IndexPage;
