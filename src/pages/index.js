@@ -1,14 +1,28 @@
-import React from 'react'
+import React from 'react';
+import { Link, graphql } from 'gatsby';
+import Img from 'gatsby-image';
 
-import Layout from '../components/layout'
-import SEO from '../components/seo'
+import Layout from '../components/layout';
 
-const HomePage = () => (
+const IndexPage = props => (
   <Layout>
-    <SEO title="Haiqal Akmal" />
-    <h1> WELCOME</h1>
-    <p>You're in the homepage</p>
+    <h1>Hi people</h1>
+    <p>Welcome to your new Gatsby site.</p>
+    <p>Now go build something great.</p>
+    <Img fluid={props.data.imageOne.childImageSharp.fluid} />
   </Layout>
-)
+);
 
-export default HomePage
+export default IndexPage;
+
+export const pageQuery = graphql`
+  query {
+    imageOne: file(relativePath: { eq: "image1.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 700) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`;
