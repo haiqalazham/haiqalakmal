@@ -6,12 +6,9 @@ import Layout from '../components/layout';
 
 const IndexPage = (props) => (
   <Layout>
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <Img fluid={props.data.imageOne.childImageSharp.fluid} style={{position: "absolute"}}/>
-    <Img fluid={props.data.imageTwo.childImageSharp.fluid} style={{position: "absolute"}}/>
-    <Img fluid={props.data.imageThree.childImageSharp.fluid} style={{position: "absolute"}}/>
+    <Img fluid={props.data.imageOne.childImageSharp.fluid} />
+    <Img fluid={props.data.imageTwo.childImageSharp.fluid} />
+    <Img fluid={props.data.imageThree.childImageSharp.fluid} />
   </Layout>
 )
 
@@ -20,7 +17,7 @@ export default IndexPage;
 export const fluidImage = graphql`
 fragment fluidImage on File {
   childImageSharp {
-    fluid(maxWidth: 700) {
+    fluid(maxWidth: 800) {
       ...GatsbyImageSharpFluid
     }
   }
