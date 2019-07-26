@@ -1,14 +1,21 @@
 import React from 'react';
-import { Link, graphql } from 'gatsby';
-import Img from 'gatsby-image';
 
+import { graphql } from 'gatsby';
+import Img from 'gatsby-image';
+import SEO from '../components/seo'
 import Layout from '../components/layout';
+import style from '../styles/post.module.css'
 
 const IndexPage = (props) => (
   <Layout>
-    <Img fluid={props.data.imageOne.childImageSharp.fluid} />
-    <Img fluid={props.data.imageTwo.childImageSharp.fluid} />
-    <Img fluid={props.data.imageThree.childImageSharp.fluid} />
+    <SEO />
+    <div className={style.post}>
+      <div className={style.column}>
+        <Img fluid={props.data.imageOne.childImageSharp.fluid} className={style.image} />
+        <Img fluid={props.data.imageTwo.childImageSharp.fluid} className={style.image} />
+        <Img fluid={props.data.imageThree.childImageSharp.fluid} className={style.image} />
+      </div>
+    </div>
   </Layout>
 )
 

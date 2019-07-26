@@ -64,3 +64,16 @@
 .postContent {
   position: relative;
 }
+
+.image {
+  border-radius: 8px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, .1);
+  flex: 1;
+  margin: 10px 10px 40px;
+}
+
+@media (min-width: 768px) {
+  .column {
+    display: flex;
+  }
+}

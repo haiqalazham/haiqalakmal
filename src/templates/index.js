@@ -13,7 +13,7 @@ const Index = ({ data, pageContext: { nextPagePath, previousPagePath } }) => {
 
   return (
     <>
-      <SEO />
+      <SEO title="Blog" />
       <Layout>
         {posts.map(({ node }) => {
           const {
