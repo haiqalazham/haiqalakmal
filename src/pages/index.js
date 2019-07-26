@@ -5,7 +5,7 @@ import SEO from '../components/seo'
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
 
-export HomePage ({ data }) => (
+const HomePage = () => (
   <Layout>
     <SEO title="Haiqal Akmal" />
     <Img fixed={data.file.childImageSharp.fixed} />
@@ -23,3 +23,4 @@ export const query = graphql`
     }
   }
 `
+export default HomePage
