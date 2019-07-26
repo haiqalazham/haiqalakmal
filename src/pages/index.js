@@ -10,19 +10,33 @@ const IndexPage = props => (
     <p>Welcome to your new Gatsby site.</p>
     <p>Now go build something great.</p>
     <Img fluid={props.data.imageOne.childImageSharp.fluid} />
+    <Img fluid={props.data.imageTwo.childImageSharp.fluid} />
+    <Img fluid={props.data.imageThree.childImageSharp.fluid} />
   </Layout>
 );
 
 export default IndexPage;
 
+export const fluidImage = graphql`
+fragment fluidImage on File {
+  childImageSharp {
+    fluid(maxWidth: 700) {
+      ...GatsbyImageSharpFluid
+    }
+  }
+}
+`;
+
 export const pageQuery = graphql`
   query {
     imageOne: file(relativePath: { eq: "image1.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 700) {
-          ...GatsbyImageSharpFluid
-        }
-      }
+      ...fluidImage
+    }
+    imageTwo: file(relativePath: { eq: "image2.jpg" }) {
+      ...fluidImage
+    }
+    imageThree: file(relativePath: { eq: "image3.jpg" }) {
+      ...fluidImage
     }
   }
-`;
+`
