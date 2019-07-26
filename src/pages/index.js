@@ -17,7 +17,7 @@ export default IndexPage;
 export const fixedImage = graphql`
 fragment fixedImage on File {
   childImageSharp {
-    fixed(width: 125, height: 125) {
+    fixed(width: 800) {
       ...GatsbyImageSharpFixed
     }
   }
