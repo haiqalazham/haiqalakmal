@@ -53,7 +53,7 @@ const Layout = ({ children }) => {
         menuMoreText={menuMoreText}
       />
       <div className="content">{children}</div>
-      <Footer copyrights={copyrights} />
+//      <Footer copyrights={copyrights} />
     </div>
   )
 }
