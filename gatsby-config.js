@@ -112,7 +112,7 @@ module.exports = {
         background_color: `#292a2d`,
         theme_color: `#292a2d`,
         display: `minimal-ui`,
-        icon: `src/images/miao.png`,
+        icon: `src/images/favicon.ico`,
       },
     },
   ],
